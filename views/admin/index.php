@@ -7,6 +7,7 @@
     include './modals/update_provee.php';
     include './modals/update_provee.php';
     include './modals/update_user.php';
+    include './modals/new_passw.php';
     $user = $_SESSION["user"];
 
     $redic = new Rd();
