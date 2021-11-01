@@ -16,7 +16,7 @@
         $descripcion = $result['descripcion'];
         $precio_compra = $result['precio_compra'];
         $precio_venta = $result['precio_venta'];
-        $stock = $_POST['stock'];
+        $stock = $result['stock'];
         $fecha_ingreso = $result['fecha_ingreso'];
         
         $descuento = $result['descuento'];
@@ -66,7 +66,7 @@
         <div class="input-group-prepend">
             <span class="input-group-text" id="basic-addon1">Stock</span>
         </div>
-        <input type="int" name="stock" class="form-control" placeholder="stock" require="ON">
+        <input type="int" name="stock" class="form-control" value="<?php echo $stock;?>" placeholder="stock" require="ON">
     </div>
     <div class="input-group mb-3">
         <div class="input-group-prepend">
