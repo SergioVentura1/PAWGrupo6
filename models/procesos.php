@@ -59,7 +59,7 @@
             return $rows;
         }
 
-        /**funcion para colocar categorias */
+        
         
     }
 ?>

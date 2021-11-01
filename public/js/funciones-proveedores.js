@@ -74,7 +74,7 @@ $(document).ready(function () {
     });
 
 
-    //Busca usuario.
+    //Busca proveedor.
     $("#like-prov").on('change', function(event){
         var valor;
         valor = $('#like-prov').val();

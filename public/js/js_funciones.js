@@ -12,7 +12,7 @@ function redURL(input){
     }
 }
 
-//El listener va aqui asignado al imput
+//El listener va aqui asignado al input
 $("#imagen").change(function(){
     redURL(this);
 });

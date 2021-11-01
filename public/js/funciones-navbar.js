@@ -29,7 +29,7 @@ $(document).ready(function(){
         event.preventDefault();
     });
 
-    /*btn Saliria */
+    /*btn Salir */
     $(".exit-sys").click(function() {
         if (confirm('Seguro/a en cerrar sesión'))
         {
@@ -48,7 +48,7 @@ $(document).ready(function(){
             $("#contenido").load("usuarios/principal.php");
         }
     });
-
+/**eliminar categoria */
     $(".eliminar-sys1").click(function () {
         if (confirm('Seguro/a que desea eliminar la categoria')) {
             $("#contenido").load("categoria/principal.php"); 
@@ -58,7 +58,7 @@ $(document).ready(function(){
             $("#contenido").load("categoria/principal.php");
         }
     });
-    
+    /**eliminar proveedor */
     $(".exit-provee").click(function () {
         if (confirm('Seguro/a que desea eliminar el proveedor')) {
             $("#contenido").load("proveedores/principal.php"); 

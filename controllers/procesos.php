@@ -1,5 +1,5 @@
 <?php
-
+    //funcion para ingresar
     function AccesoLogin($user, $passw)
     {
         $consultas = new Login();
@@ -69,7 +69,7 @@
         $data = $consultas->row_data($query);
         return $data;
     }
-
+    //funcion para buscar valor
     function buscavalor($tabla, $campo, $condicion)
     {
         $valor = NULL;
@@ -85,7 +85,7 @@
             return $valor;
         }
     }
-
+    //funcion para token
     function Token($length)
     {
         $key = '';
@@ -97,7 +97,7 @@
         }
         return $key;
     }
-
+    //funcion email
     function Email($email, $token)
     {
         $desde = "paw@gmail.com";
@@ -108,7 +108,7 @@
 
         mail($email,"Solicitud de Token",$sms,$cabecera);
     }
-
+    //funcion para cambiar clave
     function CambioClave($token, $passw1, $passw2)
     {
         $buscaToken = buscavalor("usuarios","COUNT(token)","token='$token'");
