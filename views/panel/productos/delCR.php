@@ -6,9 +6,9 @@
 
     $idcodreg = $_GET['idcodreg'];
 
-    $codregistro = buscavalor("codregistros","codreg","codproducto='idcr='$idcodreg'");
+    $codregistro = buscavalor("codregistros","codreg","idcr='$idcodreg'");
 
-    $buscaData = buscavalor("productos","COUNCT(codproducto)","codproducto='$codregistro'");
+    $buscaData = buscavalor("productos","COUNT(codproducto)","codproducto='$codregistro'");
     
     if($buscaData !=0)
     {
