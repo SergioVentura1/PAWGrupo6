@@ -3,6 +3,7 @@
 <script src="./public/js/funciones-categorias.js"></script>
 <script src="./public/js/funciones-proveedores.js"></script>
 <script src="./public/js/funciones-productos.js"></script>
+<script src="./public/js/funciones-inventarios.js"></script>
 <div class="row">
     <div class="col-md-4" style="margin-bottom:5px;">
         <div class="card">
@@ -69,5 +70,7 @@
 
     /**CODIGO REGISTRO PRODUCTO */
     include '../modals/new_CR.php';
-    include '../modals/update_CR.php'
+    include '../modals/update_CR.php';
+
+   
 ?>

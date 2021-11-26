@@ -12,7 +12,7 @@
         <a class="nav-link p-admin" href="#">Administración</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#">Inventario</a>
+        <a class="nav-link inventarios" href="#">Tienda</a>
       </li>
     </ul>
     <span class="navbar-text">
