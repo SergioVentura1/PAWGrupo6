@@ -78,7 +78,7 @@
         </div>
     </div>
     <?php if($dataUser):?>
-        <div>
+        <div class="table-responsive">
             <?php include 'table_usuarios.php'; ?>
         </div>
         

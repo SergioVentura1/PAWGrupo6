@@ -11,8 +11,8 @@
     $telefono = $_POST['telefono'];
     $dui = $_POST['dui'];
     $idusuario = $_POST['idusuario'];
-    $comision = $_POST['comision'];
-    $campos = "nombres='$nombres',apellidos='$apellidos',dui='$dui',direccion='$direccion',telefono='$telefono',idusuario='$idusuario',comision='$comision'";
+    
+    $campos = "nombres='$nombres',apellidos='$apellidos',dui='$dui',direccion='$direccion',telefono='$telefono',idusuario='$idusuario'";
 
     $condicion = "idempleado='$idempleado'";
 

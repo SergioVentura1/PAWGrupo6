@@ -38,7 +38,7 @@
     {
         $valor = $_GET['valor'];
         
-        $queryLike = "SELECT * FROM detalle_inventario WHERE idcategoria LIKE '%$valor%' OR categoria LIKE '%$valor%'";
+        $queryLike = "SELECT * FROM detalle_inventario AS di INNER JOIN productos AS p ON p.idproducto = di.idproducto WHERE p.producto LIKE '%$valor%' OR p.codproducto LIKE '%$valor%'";
 
         $dataDI = CRUD($queryLike,"s");
     }
@@ -50,6 +50,11 @@
     
     $num_registro = CountReg($query);
     $paginas = ceil($num_registro / $registros);
+
+    $idusuario = $_SESSION['idusuario'];
+    $idempleado = buscavalor("empleados","idempleado","idusuario='$idusuario'");
+
+    $buscaVentas = buscavalor("detalle_preventa","COUNT(iddpv)","estado = 0 AND idempleado = '$idempleado'");
 ?>
     <script src="./public/js/funciones-navbar.js"></script>
     <script src="./public/js/funciones-inventarios.js"></script>
@@ -58,7 +63,9 @@
 
     <div style="margin-bottom: 10px;">
         <div class="row">
-            
+            <div class="col-md-4">
+                <a href="" class="btn btn-warning ver-carrito"><?php echo $buscaVentas;?><i class="fas fa-cart-plus"></i></a>
+            </div>
             <div class="col-md-4">
                 <select id="select-reg" class="custom-select" style="width:250px">
                     <option value="0" disabled selected>Seleccione N° Registros</option>
@@ -70,7 +77,7 @@
                 </select>
             </div>
 
-            <div class="col-md-6">
+            <div class="col-md-4">
                 <input type="search" class="form-control" placeholder="Buscar Producto" id="like" autocomplete="off">
             </div>
         </div>

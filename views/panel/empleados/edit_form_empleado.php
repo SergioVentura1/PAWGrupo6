@@ -15,7 +15,7 @@
         $telefono = $result['telefono'];
         $dui = $result['dui'];
         $idusuario = $result['idusuario'];
-        $comision = $result['comision'];
+        
     }
     $usuario = buscavalor("usuarios","usuario","idusuario='$idusuario'");
 
@@ -70,12 +70,7 @@
                 <?php endforeach?>
                 </select>
             </div>
-            <div class="input-group mb-3">
-                <div class="input-group-prepend">
-                    <span class="input-group-text" id="basic-addon1">% Comisión: </span>
-                </div>
-                <input type="text" class="form-control" name="comision" value="<?php echo $comision;?>" required="ON">
-            </div>
+            
         </div>
     </div>
     

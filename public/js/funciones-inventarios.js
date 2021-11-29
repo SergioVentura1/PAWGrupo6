@@ -61,6 +61,11 @@ $(document).ready(function(){
         $("#contenido").load("./views/panel/inventarios/principal.php?num_reg=" + valor);
         event.preventDefault();
     });
-    
+
+    /**Preventas */
+    $("a.ver-carrito").click(function(event) {        
+        $("#contenido").load("./views/panel/inventarios/preventa.php");
+        event.preventDefault();
+    });
 });
 

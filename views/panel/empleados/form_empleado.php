@@ -1,9 +1,10 @@
 <?php
+    @session_start();
     include '../../../models/conexion.php';
     include '../../../controllers/funciones.php';
     include '../../../models/procesos.php';
 
-    $DataUsuarios = CRUD("SELECT * FROM usuarios WHERE tipo != 1 AND idusuario NOT IN (SELECT idusuario FROM empleados)","s"); // Datos Tabla Usuarios
+    $DataUsuarios = CRUD("SELECT * FROM usuarios WHERE idusuario NOT IN (SELECT idusuario FROM empleados)","s"); // Datos Tabla Usuarios
 ?>
 <script src="./public/js/funciones-empleados.js"></script>
 <script src="./public/js/funciones.js"></script>

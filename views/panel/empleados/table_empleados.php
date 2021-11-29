@@ -13,8 +13,7 @@
             <th class="ch">Apellidos</th>
             <th class="ch">Dirección</th>  
             <th class="ch">Teléfono</th>
-            <th class="ch">DUI</th>
-            <th class="ch">% Comisión</th>
+            <th class="ch">DUI</th>            
             <th class="ch">Usuario</th>
             <th class="ch">Editar</th>
             <th class="ch">Bloquear</th>
@@ -30,7 +29,7 @@
                 <td class="ch"><?php echo $result['direccion']; ?></td>
                 <td class="ch"><?php echo $result['telefono']; ?></td>
                 <td class="ch"><?php echo $result['dui']; ?></td>
-                <td class="ch"><?php echo $result['comision']; ?>%</td>
+                
                 <td class="ch">
                     <?php 
                         $idusuario =  $result['idusuario']; 
