@@ -6,7 +6,7 @@
             if (strtoupper(substr(PHP_OS, 0, 3)) === 'WIN') 
             {
                 $user = "root";
-                $pass = "";
+                $pass = "Admin2020";
                 $host = "localhost";
                 $bd = "iss";
             } 

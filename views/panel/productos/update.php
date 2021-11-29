@@ -30,9 +30,9 @@
     }
 
     // Obtenemos los atributos del archivo
-    $imgFile = $_FILES['imagen2']['name'];
-    $tmp_dir = $_FILES['imagen2']['tmp_name'];
-    $imgSize = $_FILES['imagen2']['size'];
+    $imgFile = $_FILES['imagen']['name'];
+    $tmp_dir = $_FILES['imagen']['tmp_name'];
+    $imgSize = $_FILES['imagen']['size'];
 
     if($imgSize > 0)
     {
