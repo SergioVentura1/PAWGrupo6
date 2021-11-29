@@ -4,6 +4,7 @@
 <script src="./public/js/funciones-proveedores.js"></script>
 <script src="./public/js/funciones-productos.js"></script>
 <script src="./public/js/funciones-inventarios.js"></script>
+<script src="./public/js/funciones-empleados.js"></script>
 <div class="row">
     <div class="col-md-4" style="margin-bottom:5px;">
         <div class="card">
@@ -72,5 +73,8 @@
     include '../modals/new_CR.php';
     include '../modals/update_CR.php';
 
+    /* Empleados*/
+    include '../modals/new_empleado.php';
+    include '../modals/update_empleado.php';
    
 ?>
