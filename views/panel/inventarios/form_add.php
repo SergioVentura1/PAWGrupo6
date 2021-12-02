@@ -1,5 +1,3 @@
-<script src="./public/js/funciones-inventarios.js"></script>
-<script src="./public/js/funciones.js"></script>
 <?php 
     @session_start();
     include '../../../models/conexion.php';
@@ -12,7 +10,22 @@
     $stock = buscavalor("productos","stock","idproducto='$idproducto'");
     $precio_venta = buscavalor("productos","precio_venta","idproducto='$idproducto'");
 ?>
+<script src="./public/js/funciones-inventarios.js"></script>
+<script src="./public/js/funciones.js"></script>
+<script>
+    $(document).ready(function(){
+        $("#cantidad").on('change',function(event){
+            var cantidad, stock;
 
+            cantidad = $("#cantidad").val();
+            stock = $("#stock").val();
+            if(cantidad > stock)
+            {
+                alertify.alert("Agregar Producto","La cantidad de producto agregada supera la cantidad de stock");
+            }
+        });
+    });
+</script>
 <form id="NewAddProducto">    
     <input type="hidden" name="idproducto" value="<?php echo $idproducto?>">
     <input type="hidden" name="idinventario" value="<?php echo $idinventario?>">

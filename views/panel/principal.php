@@ -5,6 +5,8 @@
 <script src="./public/js/funciones-productos.js"></script>
 <script src="./public/js/funciones-inventarios.js"></script>
 <script src="./public/js/funciones-empleados.js"></script>
+<script src="./public/js/funciones-clientes.js"></script>
+<script src="./public/js/funciones-sucursales.js"></script>
 <div class="row">
     <div class="col-md-4" style="margin-bottom:5px;">
         <div class="card">
@@ -40,6 +42,19 @@
                         <p id="infoEmpleado" style="display: none"><b>Empleados</b></p>
                     </div>
                 </div>
+                <!--Para boton de clientes-->
+                <div class="row center " style="margin-top: 10px;">
+                    <div class="col-md-4 auto-md" style="margin-bottom:5px;">
+                        <a href="" class="btn btn-dark clientes" id="iconcliente"><i class="fas fa-address-book fa-2x"></i></a>
+                        <p id="infoCliente" style="display: none"><b>Clientes</b></p>
+                    </div>  
+                    <div class="col-md-4 auto-md" style="margin-bottom:5px;">
+                        
+                    </div>   
+                    <div class="col-md-4 auto-md" style="margin-bottom:5px;">
+                       
+                    </div>             
+                </div>
             </div>
         </div>
     </div>
@@ -59,7 +74,7 @@
     include '../modals/new_user.php';
     include '../modals/new_passw.php';
     include '../modals/update_user.php';
-    /**CATEGORIA */
+    /**CATEGORIAs */
     include '../modals/new_cate.php';
     include '../modals/update_cate.php';
     /**PROVEEDORES */
@@ -76,5 +91,13 @@
     /* Empleados*/
     include '../modals/new_empleado.php';
     include '../modals/update_empleado.php';
-   
+
+    /**CLIENTES */
+    include '../modals/new_cliente.php';
+    include '../modals/update_cliente.php';
+
+    /**SUCURSALES */
+    include '../modals/new_sucursal.php';
+    include '../modals/update_sucursal.php';
+
 ?>

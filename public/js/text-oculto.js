@@ -46,5 +46,13 @@ eEm.onmouseover = function() {
 eEm.onmouseout = function() {
     document.getElementById('infoEmpleado').style.display = 'none';
 }
+//boton clientes
+var eCl = document.getElementById('iconcliente');
+eCl.onmouseover = function() {
+    document.getElementById('infoCliente').style.display = 'block';
+}
+eCl.onmouseout = function() {
+    document.getElementById('infoCliente').style.display = 'none';
+}
 
 

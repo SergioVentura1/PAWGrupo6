@@ -25,7 +25,9 @@
 <script src="./public/js/funciones-navbar.js"></script>
 <script src="./public/js/funciones-inventarios.js"></script>
 <script src="./public/js/funciones.js"></script>
-
+<div class="checkbox">
+    
+</div>
 <form id="realizar-pago">
     
     <table class="table table-hover table-bordered">

@@ -45,7 +45,7 @@
         echo '<script>
                 $(document).ready(function(){
                     alertify.set("notifier","position", "top-right");
-                    alertify.notify("Producto eliminado de carrito....");
+                    alertify.notify("Error al eliminar producto de carrito....");
                     $("#contenido").load("./views/panel/inventarios/preventa.php");
                 });
             </script>';
