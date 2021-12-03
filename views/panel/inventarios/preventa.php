@@ -30,7 +30,7 @@
     <input type="radio" class="tipo-cliente" name="t_cliente" value="2"><label>Cliente sin registro</label>
 </div>
 <form id="realizar-pago">
-    
+    <div id="data-cliente"></div>
     <table class="table table-hover table-bordered">
         <thead>
             <tr>
