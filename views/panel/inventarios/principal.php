@@ -18,7 +18,7 @@
         $registros = $_GET['num_reg'];
     }
     else{
-        $registros = 1;
+        $registros = 10;
     }
     
 

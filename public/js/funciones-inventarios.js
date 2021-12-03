@@ -88,4 +88,20 @@ $(document).ready(function() {
             //event.preventDefault();
         }
     });
+
+    //Detectar el tipo de cliente para la venta
+    $(".tipo-cliente").on('change', function(event)
+    {
+        var valor = $('input:radio[name=t_cliente]:checked').val();
+
+        if (valor == 1)
+        {
+            $("#data-cliente").load("./views/panel/inventarios/cliente.php");
+        }
+        else
+        {
+            $("#data-cliente").load("./views/panel/inventarios/select_cliente.php");
+        }
+        event.preventDefault();
+    });
 });

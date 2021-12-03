@@ -26,7 +26,8 @@
 <script src="./public/js/funciones-inventarios.js"></script>
 <script src="./public/js/funciones.js"></script>
 <div class="checkbox">
-    
+    <input type="radio" class="tipo-cliente" name="t_cliente" value="1"><label>Cliente con registro</label>
+    <input type="radio" class="tipo-cliente" name="t_cliente" value="2"><label>Cliente sin registro</label>
 </div>
 <form id="realizar-pago">
     
@@ -45,7 +46,7 @@
         </thead>
         <tbody>
         <?php foreach ($dataPreventa AS $result):?>
-            <input type="text" value="<?php echo $result['iddpv'];?>" name="iddpv[]">
+            <input type="hidden" value="<?php echo $result['iddpv'];?>" name="iddpv[]">
             <tr>
                 <td><?php echo $cont +=1;?></td>
                 <td>

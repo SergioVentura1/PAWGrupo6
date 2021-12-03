@@ -40,13 +40,13 @@
         <div class="input-group-prepend">
             <span class="input-group-text" id="basic-addon1">Stock: </span>
         </div>
-        <input type="text" name ="old_stock" class="form-control" value="<?php echo $stock; ?>" readonly>
+        <input type="text" name ="old_stock" id="stock" class="form-control" value="<?php echo $stock; ?>" readonly>
     </div>
     <div class="input-group mb-3">
         <div class="input-group-prepend">
             <span class="input-group-text" id="basic-addon1">Unidades: </span>
         </div>
-        <input type="number" name ="stock" class="form-control" required="ON">
+        <input type="number" name ="stock" id="cantdad" class="form-control" required="ON">
     </div>
     <div class="input-group mb-3">
         <div class="input-group-prepend">
