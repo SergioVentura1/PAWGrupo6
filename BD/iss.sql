@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.1.1
+-- version 5.0.4
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 23-11-2021 a las 23:50:43
--- Versión del servidor: 10.4.21-MariaDB
--- Versión de PHP: 8.0.12
+-- Tiempo de generación: 03-12-2021 a las 05:39:52
+-- Versión del servidor: 10.4.17-MariaDB
+-- Versión de PHP: 7.3.26
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -52,10 +52,17 @@ CREATE TABLE `clientes` (
   `nombres` varchar(50) NOT NULL,
   `apellidos` varchar(50) NOT NULL,
   `dui` varchar(10) NOT NULL,
-  `nit` varchar(17) DEFAULT NULL,
   `direccion` text DEFAULT NULL,
   `telefono` varchar(9) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Volcado de datos para la tabla `clientes`
+--
+
+INSERT INTO `clientes` (`idcliente`, `nombres`, `apellidos`, `dui`, `direccion`, `telefono`) VALUES
+(1, 'Marcos Antonio', 'Arevalo Franco', '06781256-2', 'San Salvador', '7828-1405'),
+(2, 'Marcela Alejandra', 'Quintanilla', '02315698-7', 'Soyapango, San Salvador', '7843-1221');
 
 -- --------------------------------------------------------
 
@@ -98,7 +105,9 @@ CREATE TABLE `detalle_inventario` (
 --
 
 INSERT INTO `detalle_inventario` (`iddi`, `idinventario`, `idproducto`, `fecha_ingreso`, `idcategoria`, `stock`) VALUES
-(0, 3, 4, '2021-11-23', 6, 15);
+(0, 3, 5, '2021-11-28', 6, 28),
+(0, 3, 5, '2021-11-28', 6, 28),
+(0, 4, 6, '2021-12-02', 4, 50);
 
 -- --------------------------------------------------------
 
@@ -125,7 +134,8 @@ CREATE TABLE `detalle_preventa` (
 --
 
 INSERT INTO `detalle_preventa` (`iddpv`, `idcliente`, `idempleado`, `cliente`, `idproducto`, `precio`, `cantidad`, `descuento`, `precio_total`, `fecha`, `estado`) VALUES
-(1, NULL, NULL, NULL, 3, NULL, NULL, NULL, NULL, '2021-11-23 20:47:18', NULL);
+(7, 0, 1, 'Marcos AntonioArevalo Franco', 6, 250, 1, 0, 250, '2021-12-02 22:31:23', 1),
+(8, 0, 1, 'Sergio Ventura', 6, 250, 1, 0, 250, '2021-12-02 22:38:45', 1);
 
 -- --------------------------------------------------------
 
@@ -143,6 +153,14 @@ CREATE TABLE `empleados` (
   `idusuario` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+--
+-- Volcado de datos para la tabla `empleados`
+--
+
+INSERT INTO `empleados` (`idempleado`, `nombres`, `apellidos`, `dui`, `direccion`, `telefono`, `idusuario`) VALUES
+(1, 'Gabriela', 'Delgado', '1111111-1', 'San Salvador', '1234-5678', 1),
+(6, 'Lucia', 'Mejia', '22222222-2', 'Soyapango,San Salvador', '1234-5678', 6);
+
 -- --------------------------------------------------------
 
 --
@@ -153,11 +171,15 @@ CREATE TABLE `empresa` (
   `idempresa` int(11) NOT NULL,
   `nombre` varchar(50) DEFAULT NULL,
   `direccion` text DEFAULT NULL,
-  `telefono` varchar(9) DEFAULT NULL,
-  `nit` varchar(17) DEFAULT NULL,
-  `nrc` varchar(15) DEFAULT NULL,
-  `logo` text DEFAULT NULL
+  `telefono` varchar(9) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Volcado de datos para la tabla `empresa`
+--
+
+INSERT INTO `empresa` (`idempresa`, `nombre`, `direccion`, `telefono`) VALUES
+(1, 'Sucursal Santa Tecla', 'Santa Tecla, calle principal local #12', '2221-0546');
 
 -- --------------------------------------------------------
 
@@ -177,7 +199,8 @@ CREATE TABLE `inventarios` (
 --
 
 INSERT INTO `inventarios` (`idinventario`, `codproducto`, `idcategoria`, `stock`) VALUES
-(3, 'PR2903AL12', 6, 60);
+(3, 'PR2903AL12', 6, 90),
+(4, 'A21344L', 4, 48);
 
 -- --------------------------------------------------------
 
@@ -204,9 +227,11 @@ CREATE TABLE `productos` (
 --
 
 INSERT INTO `productos` (`idproducto`, `codproducto`, `producto`, `descripcion`, `precio_venta`, `precio_compra`, `idproveedor`, `fecha_ingreso`, `stock`, `imagen`, `estado`) VALUES
-(1, 'PR2903AL12', 'Laptop HP 3G', 'Laptop HP 15\" Intel Core i-7 8 Gen, color negro.', 570, 300, 3, '2021-11-22 00:00:00', 20, '1.jpg', 1),
+(1, 'PR2903AL12', 'Laptop HP 3G', 'Laptop HP 15\" Intel Core i-7 8 Gen, color negro.', 600, 300, 3, '2021-11-21 00:00:00', 20, '1.jpg', 1),
 (3, 'PR2903AL12', 'Laptop HP 3G', 'Laptop HP 15\" Intel Core i-7 8 Gen, color negro.', 570, 300, 3, '2021-11-22 00:00:00', 25, '3.jpg', 1),
-(4, 'PR2903AL12', 'Laptop HP 3G', 'Laptop HP 15\" Intel Core i-7 8 Gen, color negro.', 570, 300, 3, '2021-11-23 00:00:00', 15, 'PR2903AL12.jpg', 1);
+(4, 'PR2903AL12', 'Laptop HP 3G', 'Laptop HP 15\" Intel Core i-7 8 Gen, color negro.', 570, 300, 3, '2021-11-23 00:00:00', 15, 'PR2903AL12.jpg', 1),
+(5, 'PR2903AL12', 'Laptop HP 3G', 'Laptop HP 15\" Intel Core i-7 8 Gen, color negro.', 570, 300, 3, '2021-11-28 00:00:00', 30, 'PR2903AL12.jpg', 1),
+(6, 'A21344L', 'Huawei NOva 9', 'Telefono Huawei', 250, 300, 1, '2021-12-02 00:00:00', 48, 'A21344L.png', 1);
 
 -- --------------------------------------------------------
 
@@ -361,7 +386,7 @@ ALTER TABLE `categorias`
 -- AUTO_INCREMENT de la tabla `clientes`
 --
 ALTER TABLE `clientes`
-  MODIFY `idcliente` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `idcliente` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT de la tabla `codregistros`
@@ -373,25 +398,25 @@ ALTER TABLE `codregistros`
 -- AUTO_INCREMENT de la tabla `detalle_preventa`
 --
 ALTER TABLE `detalle_preventa`
-  MODIFY `iddpv` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `iddpv` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT de la tabla `empleados`
 --
 ALTER TABLE `empleados`
-  MODIFY `idempleado` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `idempleado` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT de la tabla `empresa`
 --
 ALTER TABLE `empresa`
-  MODIFY `idempresa` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `idempresa` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT de la tabla `inventarios`
 --
 ALTER TABLE `inventarios`
-  MODIFY `idinventario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `idinventario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT de la tabla `proveedores`
