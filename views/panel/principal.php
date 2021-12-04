@@ -51,7 +51,7 @@
                     </div>  
                     <div class="col-md-4 auto-md" style="margin-bottom:5px;">
                         <a href="" class="btn btn-dark ventas" id="iconventas"><i class="fas fa-clipboard-list fa-2x"></i></a>
-                        <p id="infoVentas" style="display: none"><b>Detalles Ventas</b></p>
+                        <p id="infoVentas" style="display: none"><b>Reportes</b></p>
                     </div>   
                     <div class="col-md-4 auto-md" style="margin-bottom:5px;">
                        
