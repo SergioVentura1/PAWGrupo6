@@ -10,7 +10,7 @@
 <script src="./public/js/funciones-ventas.js"></script>
 <div class="row">
     <div class="col-md-4" style="margin-bottom:5px;">
-        <div class="card">
+        <div class="card" style="background-color:DeepSkyBlue">
             <div class="card-header">
                 <b>Registros</b>
             </div>

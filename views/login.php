@@ -16,7 +16,7 @@
                 <?php endif?>
                 </div>
                 <div class="center">
-                    <img  src="./public/img/login/ET.png" width="200px" alt="Logo">
+                    <img  src="./public/img/login/logofinal.jpeg" width="200px" alt="Logo">
                 </div>
                 <h4 class="ctext-fb">Iniciar Sesión</h4>
                 

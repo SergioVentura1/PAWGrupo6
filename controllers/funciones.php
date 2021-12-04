@@ -26,7 +26,7 @@
                     $_SESSION["login_ok"] = 1;
                    // header("Location: ../index.php");
                     echo '<script>
-                            $("#data").html("<div style=\'margin-top:100px;text-align:center;\'><img src=\'./public/img/login/load.gif\' alt=\'loading\' /><br/>Un momento, por favor...</div>");
+                            $("#data").html("<div style=\'margin-top:100px;text-align:center;\'><img src=\'./public/img/login/cargando2.gif\' alt=\'loading\' /><br/>Un momento, por favor...</div>");
                             var msj = "Bienvenido/a";
                             alertify.success(msj);
                             setTimeout(function() {
