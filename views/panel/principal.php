@@ -7,6 +7,7 @@
 <script src="./public/js/funciones-empleados.js"></script>
 <script src="./public/js/funciones-clientes.js"></script>
 <script src="./public/js/funciones-sucursales.js"></script>
+<script src="./public/js/funciones-ventas.js"></script>
 <div class="row">
     <div class="col-md-4" style="margin-bottom:5px;">
         <div class="card">
@@ -49,7 +50,8 @@
                         <p id="infoCliente" style="display: none"><b>Clientes</b></p>
                     </div>  
                     <div class="col-md-4 auto-md" style="margin-bottom:5px;">
-                        
+                        <a href="" class="btn btn-dark ventas" id="iconventas"><i class="fas fa-clipboard-list fa-2x"></i></a>
+                        <p id="infoVentas" style="display: none"><b>Detalles Ventas</b></p>
                     </div>   
                     <div class="col-md-4 auto-md" style="margin-bottom:5px;">
                        

@@ -55,4 +55,13 @@ eCl.onmouseout = function() {
     document.getElementById('infoCliente').style.display = 'none';
 }
 
+//boton detalles ventas
+var eVen = document.getElementById('iconventas');
+eVen.onmouseover = function() {
+    document.getElementById('infoVentas').style.display = 'block';
+}
+eVen.onmouseout = function() {
+    document.getElementById('infoVentas').style.display = 'none';
+}
+
 
