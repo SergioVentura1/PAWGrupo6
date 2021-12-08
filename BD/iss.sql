@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 03-12-2021 a las 05:39:52
+-- Tiempo de generación: 08-12-2021 a las 11:44:24
 -- Versión del servidor: 10.4.17-MariaDB
 -- Versión de PHP: 7.3.26
 
@@ -39,7 +39,9 @@ CREATE TABLE `categorias` (
 INSERT INTO `categorias` (`idcategoria`, `categoria`) VALUES
 (4, 'Smartphones'),
 (5, 'Teclados'),
-(6, 'Laptop');
+(6, 'Laptop'),
+(7, 'Consolas'),
+(8, 'Audifonos');
 
 -- --------------------------------------------------------
 
@@ -62,7 +64,8 @@ CREATE TABLE `clientes` (
 
 INSERT INTO `clientes` (`idcliente`, `nombres`, `apellidos`, `dui`, `direccion`, `telefono`) VALUES
 (1, 'Marcos Antonio', 'Arevalo Franco', '06781256-2', 'San Salvador', '7828-1405'),
-(2, 'Marcela Alejandra', 'Quintanilla', '02315698-7', 'Soyapango, San Salvador', '7843-1221');
+(2, 'Marcela Alejandra', 'Quintanilla', '02315698-7', 'Soyapango, San Salvador', '7843-1221'),
+(5, 'Chepito', 'Franco', '12312311-1', 'avenida nutella calle sivar', '1231-2313');
 
 -- --------------------------------------------------------
 
@@ -105,9 +108,13 @@ CREATE TABLE `detalle_inventario` (
 --
 
 INSERT INTO `detalle_inventario` (`iddi`, `idinventario`, `idproducto`, `fecha_ingreso`, `idcategoria`, `stock`) VALUES
-(0, 3, 5, '2021-11-28', 6, 28),
-(0, 3, 5, '2021-11-28', 6, 28),
-(0, 4, 6, '2021-12-02', 4, 50);
+(0, 4, 7, '2021-12-03', 4, 40),
+(0, 4, 7, '2021-12-03', 4, 40),
+(0, 4, 7, '2021-12-03', 4, 40),
+(0, 4, 7, '2021-12-03', 4, 40),
+(0, 3, 8, '2021-12-02', 7, 50),
+(0, 4, 9, '2021-12-03', 7, 25),
+(0, 5, 10, '2021-12-03', 8, 65);
 
 -- --------------------------------------------------------
 
@@ -159,7 +166,8 @@ CREATE TABLE `empleados` (
 
 INSERT INTO `empleados` (`idempleado`, `nombres`, `apellidos`, `dui`, `direccion`, `telefono`, `idusuario`) VALUES
 (1, 'Gabriela', 'Delgado', '1111111-1', 'San Salvador', '1234-5678', 1),
-(6, 'Lucia', 'Mejia', '22222222-2', 'Soyapango,San Salvador', '1234-5678', 6);
+(6, 'Lucia', 'Mejia', '22222222-2', 'Soyapango,San Salvador', '1234-5678', 6),
+(7, 'Sergio', 'Ventura', '00010000-7', 'casa 24 reparto los Alpes', '1313-2132', 8);
 
 -- --------------------------------------------------------
 
@@ -199,8 +207,9 @@ CREATE TABLE `inventarios` (
 --
 
 INSERT INTO `inventarios` (`idinventario`, `codproducto`, `idcategoria`, `stock`) VALUES
-(3, 'PR2903AL12', 6, 90),
-(4, 'A21344L', 4, 48);
+(3, 'PR2903AL12', 6, 140),
+(4, 'A21344L', 4, 113),
+(5, 'PR5100501', 8, 65);
 
 -- --------------------------------------------------------
 
@@ -231,7 +240,11 @@ INSERT INTO `productos` (`idproducto`, `codproducto`, `producto`, `descripcion`,
 (3, 'PR2903AL12', 'Laptop HP 3G', 'Laptop HP 15\" Intel Core i-7 8 Gen, color negro.', 570, 300, 3, '2021-11-22 00:00:00', 25, '3.jpg', 1),
 (4, 'PR2903AL12', 'Laptop HP 3G', 'Laptop HP 15\" Intel Core i-7 8 Gen, color negro.', 570, 300, 3, '2021-11-23 00:00:00', 15, 'PR2903AL12.jpg', 1),
 (5, 'PR2903AL12', 'Laptop HP 3G', 'Laptop HP 15\" Intel Core i-7 8 Gen, color negro.', 570, 300, 3, '2021-11-28 00:00:00', 30, 'PR2903AL12.jpg', 1),
-(6, 'A21344L', 'Huawei NOva 9', 'Telefono Huawei', 250, 300, 1, '2021-12-02 00:00:00', 48, 'A21344L.png', 1);
+(6, 'A21344L', 'Huawei NOva 9', 'Telefono Huawei', 250, 300, 1, '2021-12-02 00:00:00', 48, 'A21344L.png', 1),
+(7, 'A21344L', 'Xbox series X', 'consola Xbox series x Black 1tb', 500, 750, 4, '2021-12-03 00:00:00', 40, 'A21344L.jpg', 1),
+(8, 'PR2903AL12', 'Ps5', 'consola Ps5 1tb', 600, 800, 6, '2021-12-02 00:00:00', 50, 'PR2903AL12.jpeg', 1),
+(9, 'A21344L', 'Xbox one X', 'consola Xbox one x Black 1tb', 300, 450, 4, '2021-12-03 00:00:00', 25, 'A21344L.jpg', 1),
+(10, 'PR5100501', 'Logitech g733', 'Logitech g733 inalambricos', 60, 85, 5, '2021-12-03 00:00:00', 65, 'PR5100501.png', 1);
 
 -- --------------------------------------------------------
 
@@ -253,7 +266,10 @@ CREATE TABLE `proveedores` (
 
 INSERT INTO `proveedores` (`idproveedor`, `proveedor`, `direccion`, `telefono`, `correo`) VALUES
 (1, 'proveedorSA de C.V', 'San Salvador, El Salvador', '22980421', 'prov1@hotmail.com'),
-(3, 'Tecnology', 'Colonia Escalon, San Salvador', '21350624', 'Tecnology@empresa.com.sv');
+(3, 'Tecnology', 'Colonia Escalon, San Salvador', '21350624', 'Tecnology@empresa.com.sv'),
+(4, 'Microsoft', 'Miami florida', '250-565-2', 'Microsoft@xbox.com'),
+(5, 'Logitech', 'Mexico,DF', '250-565-3', 'Logitech@logi.com'),
+(6, 'Sony', 'Miami florida', '1231-2312', 'sony@sony.com');
 
 -- --------------------------------------------------------
 
@@ -300,7 +316,8 @@ CREATE TABLE `usuarios` (
 INSERT INTO `usuarios` (`idusuario`, `usuario`, `passw`, `estado`, `tipo`, `token`, `correo`, `foto`) VALUES
 (1, 'admin', '$2y$10$svYPxGihYJvF/adVQWQA2O/7eESY8Cm2FNyrT1doOTJCAwR.keNFm', 1, 1, '', 'gabrieladelm97@gmail.com', NULL),
 (6, 'bart', '$2y$10$zQFCQvgTOduh0HyWVq1MTup7RCV0hNklTjMLpbTVrBompP/5Vlpfm', 1, 1, NULL, NULL, 'bart.png'),
-(7, 'Gaby', '$2y$10$J9f9HICXDSvsUNFoG7AKLOzEZXdKESMsl1Xu0iIumKAadksrUVXVq', 1, 1, NULL, 'gabrieladelm97@gmail.com', 'Gaby.jpg');
+(7, 'Gaby', '$2y$10$J9f9HICXDSvsUNFoG7AKLOzEZXdKESMsl1Xu0iIumKAadksrUVXVq', 1, 1, NULL, 'gabrieladelm97@gmail.com', 'Gaby.jpg'),
+(8, 'SergioVe', '$2y$10$e.BqsO53ZTurIVPhfvbzweVdSWwjGUujFbj3Yrtxk/cp3xigpQxhu', 1, 2, NULL, 'adonay@gmail.com', 'SergioVe.png');
 
 --
 -- Índices para tablas volcadas
@@ -380,13 +397,13 @@ ALTER TABLE `usuarios`
 -- AUTO_INCREMENT de la tabla `categorias`
 --
 ALTER TABLE `categorias`
-  MODIFY `idcategoria` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `idcategoria` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT de la tabla `clientes`
 --
 ALTER TABLE `clientes`
-  MODIFY `idcliente` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `idcliente` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT de la tabla `codregistros`
@@ -398,13 +415,13 @@ ALTER TABLE `codregistros`
 -- AUTO_INCREMENT de la tabla `detalle_preventa`
 --
 ALTER TABLE `detalle_preventa`
-  MODIFY `iddpv` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `iddpv` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT de la tabla `empleados`
 --
 ALTER TABLE `empleados`
-  MODIFY `idempleado` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `idempleado` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT de la tabla `empresa`
@@ -416,13 +433,13 @@ ALTER TABLE `empresa`
 -- AUTO_INCREMENT de la tabla `inventarios`
 --
 ALTER TABLE `inventarios`
-  MODIFY `idinventario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `idinventario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT de la tabla `proveedores`
 --
 ALTER TABLE `proveedores`
-  MODIFY `idproveedor` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `idproveedor` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT de la tabla `tipo_usuario`
@@ -434,7 +451,7 @@ ALTER TABLE `tipo_usuario`
 -- AUTO_INCREMENT de la tabla `usuarios`
 --
 ALTER TABLE `usuarios`
-  MODIFY `idusuario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `idusuario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
